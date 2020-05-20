@@ -1,0 +1,93 @@
+﻿* {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+    border: 2px solid #eee;
+    padding: 2rem;
+    box-shadow: 0px 5px 2px rgba(0,0,0,.2);
+}
+
+.stylediv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+    .stylediv span {
+        color: slategray;
+        font-size: 1.6rem;
+    }
+
+.container h1 {
+    font-size: 3.5rem;
+    align-self: center;
+    font-weight: 300;
+}
+
+.stylediv input {
+    width: 25rem;
+    border: 1.5px solid lightgrey;
+    height: 2.5rem;
+    font-size: 1.4rem;
+    color: slategray;
+    padding-left: .5rem;
+    transition: all .4s;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    outline: none;
+}
+
+.insideDiv {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+    .insideDiv span {
+        color: orangered;
+        font-size: 1.2rem;
+        position: absolute;
+        bottom: -15px;
+        left: 8px;
+    }
+
+.stylediv input:focus {
+    border: 1.5px solid slategray;
+}
+
+.submitButton {
+    font-size: 1.4rem;
+    align-self: center;
+    margin-top: 2.5rem;
+    padding: .5rem;
+    outline: none;
+    border: 1.5px solid grey;
+    background-color: #eee;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .3s;
+    box-sizing: border-box;
+}
+
+    .submitButton:hover {
+        background-color: white;
+    }
