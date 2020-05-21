@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -22,6 +23,7 @@ namespace FundooNote.Views.Home
                 conn.Open();
                 string insertQuery = "insert into UserDetails values(@Id,@FirstName,@LastName,@Email,@Password)";
                 SqlCommand cmd = new SqlCommand(insertQuery, conn);
+                
                 cmd.Parameters.AddWithValue("@Id",1);
                 cmd.Parameters.AddWithValue("@FirstName", txtFName.Text);
                 cmd.Parameters.AddWithValue("@LastName", txtLName.Text);

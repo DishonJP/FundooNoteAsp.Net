@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -18,14 +19,23 @@ namespace FundooNote
         {
             try
             {
+                bool responce;
                 SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Projects\FundooNote\App_Data\FundooAppDB.mdf;Integrated Security=True");
                 string FindQuery = "select * from UserDetails where Email="+ txtEmail.Text + " AND Password="+ txtPassword.Text;
-                SqlCommand cmd = new SqlCommand(FindQuery, conn);
-                cmd.CommandType = System.Data.CommandType.Text;
                 conn.Open();
+                SqlCommand cmd = new SqlCommand("GetUser", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+                cmd.ExecuteNonQuery();
                 SqlDataReader reader = cmd.ExecuteReader();
-                Response.Write(reader.Read());
+                responce= reader.Read();
                 conn.Close();
+                if (responce)
+                {
+                    Response.Redirect("Home");
+                }
+                Response.Write("Login UnSuccessful");
             }
             catch (Exception ex)
             {

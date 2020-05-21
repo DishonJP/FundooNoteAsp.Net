@@ -72,8 +72,8 @@ C:\Projects\FundooNote\bin\System.Web.WebPages.Razor.xml
 C:\Projects\FundooNote\bin\Newtonsoft.Json.xml
 C:\Projects\FundooNote\bin\Antlr3.Runtime.pdb
 C:\Projects\FundooNote\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Projects\FundooNote\obj\Debug\FundooNote.csprojAssemblyReference.cache
 C:\Projects\FundooNote\obj\Debug\FundooNote.csproj.CoreCompileInputs.cache
 C:\Projects\FundooNote\obj\Debug\FundooNote.csproj.CopyComplete
 C:\Projects\FundooNote\obj\Debug\FundooNote.dll
 C:\Projects\FundooNote\obj\Debug\FundooNote.pdb
+C:\Projects\FundooNote\obj\Debug\FundooNote.csprojAssemblyReference.cache
