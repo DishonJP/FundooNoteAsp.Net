@@ -17,11 +17,13 @@
     </header>
     <section>
         <div>
-            <input class="input-Title" autofocus id="Text1" type="text" placeholder="Title" />
+            <input class="input-title" type="text" id="noteTitle" placeholder="Title" />
             <br />
-            <textarea class="textarea-Description" id="TextArea1" rows="4" cols="40" placeholder="Description"></textarea>
-            <input class="button-card" id="Button1" type="button" value="ADD" />
+            <textarea class="input-description" id="noteDescription" placeholder="Description"></textarea>
+            <button id="submit" class="button-card">Add</button>
         </div>
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="~/Scripts/jquery.addNote.js"></script>
 </body>
 </html>
