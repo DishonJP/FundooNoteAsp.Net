@@ -33,7 +33,7 @@ namespace FundooNote
                 conn.Close();
                 if (responce)
                 {
-                    Response.Redirect("Home");
+                    Response.Redirect("Home.aspx");
                 }
                 Response.Write("Login UnSuccessful");
             }
