@@ -76,7 +76,6 @@ C:\Projects\FundooNote\obj\Debug\FundooNote.csproj.CoreCompileInputs.cache
 C:\Projects\FundooNote\obj\Debug\FundooNote.csproj.CopyComplete
 C:\Projects\FundooNote\obj\Debug\FundooNote.dll
 C:\Projects\FundooNote\obj\Debug\FundooNote.pdb
-C:\Projects\FundooNote\obj\Debug\FundooNote.csprojAssemblyReference.cache
 C:\Projects\FundooNote\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
 C:\Projects\FundooNote\bin\Microsoft.AspNetCore.Authentication.Core.dll
 C:\Projects\FundooNote\bin\Microsoft.AspNetCore.Authorization.dll
@@ -172,3 +171,4 @@ C:\Projects\FundooNote\bin\Microsoft.EntityFrameworkCore.xml
 C:\Projects\FundooNote\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
 C:\Projects\FundooNote\obj\Debug\FundooNote.Migrations.InitialModel.resources
 C:\Projects\FundooNote\obj\Debug\FundooNote.csproj.GenerateResource.cache
+C:\Projects\FundooNote\obj\Debug\FundooNote.Migrations.addedRequired.resources

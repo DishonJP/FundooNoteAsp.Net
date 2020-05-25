@@ -1,8 +1,8 @@
-﻿$(Document).ready(function () {
+﻿$(function () {
     $("#submit").click(function (e) {
-        if ($("#noteTitle").val() == "")
+        if ($("#txtTitle").val() == "")
             alert("Title cannot be empty");
-        else if ($("#noteDescription").val() == "")
+        else if ($("#nDescription").val() == "")
             alert("Description cannot be empty"); 
         else {
             $.ajax({

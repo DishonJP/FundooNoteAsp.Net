@@ -271,22 +271,23 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AddNotesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="Manager\INotesManager.cs" />
+    <Compile Include="Manager\NotesManager.cs" />
+    <Compile Include="Migrations\202005250416188_addedRequired.cs" />
+    <Compile Include="Migrations\202005250416188_addedRequired.designer.cs">
+      <DependentUpon>202005250416188_addedRequired.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Repository\INotesRespository.cs" />
+    <Compile Include="Repository\NotesRepository.cs" />
+    <Compile Include="WebForms\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="WebForms\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202005211114564_Initial Model.cs" />
@@ -297,11 +298,11 @@
     <Compile Include="Models\AddNote.cs" />
     <Compile Include="Persistance\DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="WebForms\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="WebForms\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -323,8 +324,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Home.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="WebForms\Login.aspx" />
     <Content Include="Scripts\jquery.addNote.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -341,7 +341,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\registration.js" />
-    <Content Include="Default.aspx" />
+    <Content Include="WebForms\Default.aspx" />
     <Content Include="Content\Default.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -353,6 +353,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\AddNotes\Create.cshtml" />
+    <Content Include="Views\AddNotes\Delete.cshtml" />
+    <Content Include="Views\AddNotes\Details.cshtml" />
+    <Content Include="Views\AddNotes\Edit.cshtml" />
+    <Content Include="Views\AddNotes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -370,6 +375,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005211114564_Initial Model.resx">
       <DependentUpon>202005211114564_Initial Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005250416188_addedRequired.resx">
+      <DependentUpon>202005250416188_addedRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
