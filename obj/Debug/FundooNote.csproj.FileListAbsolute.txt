@@ -172,3 +172,4 @@ C:\Projects\FundooNote\bin\Microsoft.EntityFrameworkCore.Abstractions.xml
 C:\Projects\FundooNote\obj\Debug\FundooNote.Migrations.InitialModel.resources
 C:\Projects\FundooNote\obj\Debug\FundooNote.csproj.GenerateResource.cache
 C:\Projects\FundooNote\obj\Debug\FundooNote.Migrations.addedRequired.resources
+C:\Projects\FundooNote\obj\Debug\FundooNote.csprojAssemblyReference.cache
