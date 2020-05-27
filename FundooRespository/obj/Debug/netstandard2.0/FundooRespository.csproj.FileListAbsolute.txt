@@ -1,0 +1,5 @@
+C:\Projects\FundooRespository\bin\Debug\netstandard2.0\FundooRespository.deps.json
+C:\Projects\FundooRespository\bin\Debug\netstandard2.0\FundooRespository.dll
+C:\Projects\FundooRespository\obj\Debug\netstandard2.0\FundooRespository.csprojAssemblyReference.cache
+C:\Projects\FundooRespository\obj\Debug\netstandard2.0\FundooRespository.AssemblyInfoInputs.cache
+C:\Projects\FundooRespository\obj\Debug\netstandard2.0\FundooRespository.AssemblyInfo.cs

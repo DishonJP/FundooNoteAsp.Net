@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3E75Bclt6KwVHsaJSgVQZgWVKEUSGbuJDrBC/zkKQMhhBD9n68JIJ9GFaLEcreJ/s7qcl8NnMmdW7kw8vmK9zQ==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\FundooManager\\FundooManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\disho\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\disho\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
