@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooWebforms", "FundooWebforms.csproj", "{CEF65BBD-0C66-4071-83FE-7C2FDC43533D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooModel", "..\FundooModel\FundooModel.csproj", "{F5C1C7B3-C65C-451F-A80C-05ED2009FEAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEF65BBD-0C66-4071-83FE-7C2FDC43533D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF65BBD-0C66-4071-83FE-7C2FDC43533D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF65BBD-0C66-4071-83FE-7C2FDC43533D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF65BBD-0C66-4071-83FE-7C2FDC43533D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5C1C7B3-C65C-451F-A80C-05ED2009FEAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C1C7B3-C65C-451F-A80C-05ED2009FEAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C1C7B3-C65C-451F-A80C-05ED2009FEAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C1C7B3-C65C-451F-A80C-05ED2009FEAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA6C2839-7469-42B4-973D-8E90A664016E}
+	EndGlobalSection
+EndGlobal
