@@ -34,7 +34,7 @@
                 processData: true,
             }).then(res => {
                 alert("Registration Successful");
-                console.log(res)
+                window.location.replace("https://localhost:44343/WebForms/Login");
             }).catch(err => {
                 alert("Registration UnSuccessful");
                 console.log(err)

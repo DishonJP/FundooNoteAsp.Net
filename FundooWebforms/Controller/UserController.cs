@@ -26,7 +26,7 @@ namespace FundooWebforms.Controller
 
         // GET: api/User/5
         [ResponseType(typeof(UserModel))]
-        public async Task<IHttpActionResult> GetUserModel(Guid id)
+        public async Task<IHttpActionResult> GetUserModel(int id)
         {
             UserModel userModel = await db.userModels.FindAsync(id);
             if (userModel == null)
@@ -39,14 +39,14 @@ namespace FundooWebforms.Controller
 
         // PUT: api/User/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutUserModel(Guid id, UserModel userModel)
+        public async Task<IHttpActionResult> PutUserModel(int id, UserModel userModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != userModel.Id)
+            if (id != userModel.UserId)
             {
                 return BadRequest();
             }
@@ -81,31 +81,15 @@ namespace FundooWebforms.Controller
                 return BadRequest(ModelState);
             }
 
-            userModel.Id = Guid.NewGuid();
             db.userModels.Add(userModel);
+            await db.SaveChangesAsync();
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (UserModelExists(userModel.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtRoute("DefaultApi", new { id = userModel.Id }, userModel);
+            return CreatedAtRoute("DefaultApi", new { id = userModel.UserId }, userModel);
         }
 
         // DELETE: api/User/5
         [ResponseType(typeof(UserModel))]
-        public async Task<IHttpActionResult> DeleteUserModel(Guid id)
+        public async Task<IHttpActionResult> DeleteUserModel(int id)
         {
             UserModel userModel = await db.userModels.FindAsync(id);
             if (userModel == null)
@@ -128,9 +112,9 @@ namespace FundooWebforms.Controller
             base.Dispose(disposing);
         }
 
-        private bool UserModelExists(Guid id)
+        private bool UserModelExists(int id)
         {
-            return db.userModels.Count(e => e.Id == id) > 0;
+            return db.userModels.Count(e => e.UserId == id) > 0;
         }
     }
 }
