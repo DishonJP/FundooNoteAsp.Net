@@ -16,12 +16,15 @@
                 "</div>" +
                 "</div>";
             $(note).appendTo($("#noteSession"))
-            $("#"+el.NoteId).click(function (e) {
+            /*$("#" + el.NoteId).click(function (e) {   
+                const url = "webforms/deletenote?title=" + encodeURIComponent(el.Title) + "&description=" + encodeURIComponent(el.Description) + "&id=" + encodeURIComponent(el.NoteId);
+                window.location.href = url;
                 $.ajax({
                     type: "Delete",
-                    url: "https://localhost:44343/api/note?id=" + e.target.id
+                    url: "https://localhost:44343/api/note?id=" + e.target.id,
+                    data: { id: e.target.id }
                 }).then(res => console.log(res)).catch(err => console.log(err));
-            })
+            })*/
         })
 
     }).catch(err => alert("error"));
