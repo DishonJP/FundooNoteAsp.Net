@@ -212,9 +212,6 @@ h1 {
     margin:0 auto;
 }
 
-
-
-
 .note-cards {
     display: flex;
     flex-direction: column;
@@ -224,6 +221,14 @@ h1 {
     width:325px;
     margin-bottom:1rem;
     transition:all .4s;
+}
+
+.note-list {
+    width: 60%;
+}
+
+.note-grid{
+    width:325px;
 }
 
     .note-cards i {
@@ -390,8 +395,7 @@ header button:hover{
 .drawer a{
     text-decoration:none;
     color:inherit;
-    font-size:1.4rem;
-    margin-top:1.5rem;
+    font-size:1.2rem;
     padding:.5rem;
     width:90%;
     display:block;
@@ -407,3 +411,118 @@ header button:hover{
     .drawer a:visited {
         background-color: #feefc3;
     }
+
+.color-icons{
+    height:1.2rem;
+    width:1.2rem;
+    border-radius:50%;
+    margin:3px;
+    border:1px solid lightgray;
+}
+.color-contain {
+    width: 110px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    height: auto;
+    top: 100%;
+    z-index:100;
+    visibility:hidden;
+    background-color:#fff;
+    box-shadow:0px 2px 10px rgba(0,0,0,.2);
+    transition:all .3s;
+}
+
+.color-show{
+    visibility:visible;
+}
+
+
+
+.user-menu {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 100%;
+    right:10%;
+    border-radius:3px;
+    background-color: #fff;
+    z-index: 100;
+    box-shadow: 0px 2px 10px rgba(0,0,0,.2);
+    visibility:hidden;
+}
+
+.user-menu-open{
+    visibility:visible;
+}
+
+.user-out{
+    height:70px;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-top:1px solid lightgray;
+}
+
+.user-pic {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+}
+
+.user-pic i{
+    height:4rem;
+    width:4rem;
+    border-radius:50%;
+    background-color:lightgray;
+    display:flex;
+    font-size:1.4rem;
+    align-items:center;
+    justify-content:center;
+}
+
+.user-pic>p{
+    font-size:1.1rem;
+}
+
+.user-out div{
+    padding:5px;
+    border:1px solid lightgray;
+    border-radius:5px;
+    transition:all .3s;
+}
+
+.user-out div:hover{
+    background-color:lightgray;
+}
+
+.user-pro{
+    display:flex;
+    align-items:center;
+    padding:5px;
+    transition:all .3s;
+}
+
+.user-pro:hover{
+    background-color:lightgray;
+}
+
+.user-pro p{
+    font-size:.8rem;
+}
+
+.user-pro i{
+    padding:10px;
+    color:#fff;
+    margin-right:15px;
+    margin-left:30px;
+    background-color:lightgray;
+    border-radius:50%;
+}

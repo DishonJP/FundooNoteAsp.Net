@@ -6,7 +6,7 @@ C:\Projects\FundooModel\obj\Debug\FundooModel.dll
 C:\Projects\FundooModel\obj\Debug\FundooModel.pdb
 C:\Projects\FundooNote\FundooModel\bin\Debug\FundooModel.dll
 C:\Projects\FundooNote\FundooModel\bin\Debug\FundooModel.pdb
+C:\Projects\FundooNote\FundooModel\obj\Debug\FundooModel.csprojAssemblyReference.cache
 C:\Projects\FundooNote\FundooModel\obj\Debug\FundooModel.csproj.CoreCompileInputs.cache
 C:\Projects\FundooNote\FundooModel\obj\Debug\FundooModel.dll
 C:\Projects\FundooNote\FundooModel\obj\Debug\FundooModel.pdb
-C:\Projects\FundooNote\FundooModel\obj\Debug\FundooModel.csprojAssemblyReference.cache

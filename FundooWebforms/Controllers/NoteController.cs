@@ -88,6 +88,8 @@ namespace FundooWebforms.Controllers
         }
 
         // DELETE: api/Note/5
+        [HttpDelete]
+        [Route("api/Delete/{id}")]
         [ResponseType(typeof(NoteModel))]
         public async Task<IHttpActionResult> DeleteNoteModel(int id)
         {

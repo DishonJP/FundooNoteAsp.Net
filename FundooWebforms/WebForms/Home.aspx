@@ -5,8 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fundoo</title>
-    <link href="../Content/Custom/home.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+<link rel="stylesheet" type="text/css" href="<%=VirtualPathUtility.ToAbsolute("~/Content/Custom/home.css")%>" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/3bd0a62b3b.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,7 +23,6 @@
                 </div>
         </div>
         <div class="search">
-
             <i class="fas fa-search"></i>
             <input placeholder="Search" />
         </div>
@@ -31,21 +31,45 @@
             <button>
                 <i class="fas fa-cog"></i>
             </button>
-            <button>
+            <button id="grid">
                 <i class="fas fa-th-large"></i>
             </button>
-            <button>
+            <button id="list">
                 <i class="fas fa-list"></i>
             </button>
-            <button>
+            <button style="position:relative" id="user-open">
                 <i class="fas fa-user"></i>
+                <div id="user-class" class="user-menu">
+                            <div class="user-pic">
+                                <i class="fas fa-user"></i>
+                                <p id="username"></p>
+                                <p id="email"></p>
+                            </div>
+                    <div class="user-pro">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <p id="usernames"></p>
+                            <p id="emails"></p>
+                        </div>
+                    </div>
+                    <div class="user-pro">
+                        <i class="fas fa-user-plus"></i>
+                        <p>add account</p>
+                    </div>
+                            <div class="user-out">
+                                <div class="signout">Signout</div>
+                            </div>
+                        </div>
             </button>
         </div>
 
     </header>
     <div id="drawer" class="drawer">
-        <h1>Fundoo</h1>
         <a href="Home.aspx" >Home</a>
+        <a href="Home.aspx" >Reminder</a>
+        <a href="Home.aspx" >Archive</a>
+        <a href="Home.aspx" >Trash</a>
+        <a href="Home.aspx" >Labels</a>
     </div>
     <section class="create-session">
         <form id="form1" class="add-note" runat="server">
@@ -65,7 +89,8 @@
                 <div class="icon-button-div">
                     <button><i class="far fa-bell"></i></button>
                     <button><i class="fas fa-user-plus"></i></button>
-                    <button><i class="fas fa-palette"></i></button>
+                    <button style="position:relative" id="color-open"><i class="fas fa-palette"></i>
+                        <div class="color-contain" id="colors"></div></button>
                     <button><i class="fas fa-image"></i></button>
                     <button><i class="fas fa-archive"></i></button>
                     <button><i class="fas fa-ellipsis-v"></i></button>
@@ -81,9 +106,51 @@
     <section id="noteSession" class="note-session"></section>
     <script type="text/javascript">
         $(document).ready(function () {
+            const userName = JSON.parse(localStorage.getItem("userDetails")).FirstName;
+            const email = JSON.parse(localStorage.getItem("userDetails")).Email;
+            $("#username").append(userName);
+            $("#email").append(email);
+            $("#usernames").append(userName);
+            $("#emails").append(email);
+            const colors = [
+                { id: "1", color: "#fff" },
+                { id: "2", color: '#f28b82' },
+                { id: "3", color: '#fbbc04' },
+                { id: "4", color: '#fff475' },
+                { id: "5", color: '#ccff90' },
+                { id: "6", color: '#a7ffeb' },
+                { id: "7", color: '#cbf0f8' },
+                { id: "8", color: '#aecbfa' },
+                { id: "9", color: '#d7aefb' },
+                { id: "10", color: '#fdcfe8' },
+                { id: "11", color: '#e6c9a8' },
+                { id: "12", color: '#e8eaed' },
+            ];
+            colors.forEach(el => {
+                let palette = "<div class='color-icons' style='background-color:" + el.color + "'></div>"
+                $(palette).appendTo("#colors");
+            })
+            $("#color-open").click(function (e) {
+                e.preventDefault();
+                $("#colors").toggleClass("color-show");
+            })
+
+            $("#list").click(function (e) {
+                $(".note-cards").removeClass("note-grid");
+                $(".note-cards").addClass("note-list");
+            })
+
+            $("#grid").click(function (e) {
+                $(".note-cards").removeClass("note-list");
+                $(".note-cards").addClass("note-grid");
+            })
 
             $("#menu-open").click(function () {
                 $("#drawer").toggleClass("drawer-open");
+            })
+
+            $("#user-open").click(function () {
+                $("#user-class").toggleClass("user-menu-open")
             })
 
             $.ajax({
@@ -107,8 +174,8 @@
                                 "<button><i class='fas fa-user-plus'></i></button>"+
                                 "<button><i class='fas fa-palette'></i></button>"+
                                 "<button><i class='fas fa-image'></i></button>"+
-                                "<button><i class='fas fa-archive'></i></button>"+
-                                "<button><i class='fas fa-ellipsis-v'></i></button>"+
+                        "<button><i class='fas fa-archive'></i></button>" +
+                        "<button id='" + el.NoteId + "'><i class='fas fa-ellipsis-v'></i></button>" +
                " </div>"+
                         "</div>";
                     $(note).appendTo($("#noteSession"))

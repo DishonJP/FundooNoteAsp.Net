@@ -356,6 +356,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\NoteRemoveController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Default.aspx.cs">
@@ -427,8 +428,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Delete\" />
     <Folder Include="Views\Example\" />
     <Folder Include="Views\NoteModels\" />
+    <Folder Include="Views\NoteModel\" />
     <Folder Include="Views\NoteMVC\" />
   </ItemGroup>
   <ItemGroup>
