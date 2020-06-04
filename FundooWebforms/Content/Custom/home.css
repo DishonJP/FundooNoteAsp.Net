@@ -50,7 +50,7 @@ h1 {
 
 .add-note {
     margin: 3rem auto;
-    width: 40%;
+    width: 600px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -525,4 +525,10 @@ header button:hover{
     margin-left:30px;
     background-color:lightgray;
     border-radius:50%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .add-note{
+        width:60%;
+    }
 }

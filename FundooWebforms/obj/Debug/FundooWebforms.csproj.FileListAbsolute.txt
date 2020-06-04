@@ -291,3 +291,10 @@ C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.csproj.CoreCompil
 C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.csproj.CopyComplete
 C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.dll
 C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.pdb
+C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.Migrations.init.resources
+C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.Migrations.simple.resources
+C:\Projects\FundooNote\FundooWebforms\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Projects\FundooNote\FundooWebforms\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.Migrations._do.resources
+C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.Migrations.done.resources
+C:\Projects\FundooNote\FundooWebforms\obj\Debug\FundooWebforms.Migrations.test.resources

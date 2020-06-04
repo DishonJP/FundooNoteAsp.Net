@@ -16,11 +16,12 @@ namespace FundooWebforms.Controllers
 {
     public class NoteController : ApiController
     {
-        private DataContext db = new DataContext();
+        
 
         // GET: api/Note
         public IQueryable<NoteModel> GetnoteModels()
         {
+            DataContext db = new DataContext();
             return db.noteModels;
         }
 
@@ -28,6 +29,7 @@ namespace FundooWebforms.Controllers
         [ResponseType(typeof(NoteModel))]
         public async Task<IHttpActionResult> GetNoteModel(int id)
         {
+            DataContext db = new DataContext();
             NoteModel noteModel = await db.noteModels.FindAsync(id);
             if (noteModel == null)
             {
@@ -38,9 +40,12 @@ namespace FundooWebforms.Controllers
         }
 
         // PUT: api/Note/5
+        [HttpPost]
+        [Route("api/Note/Update/{id}")]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutNoteModel(int id, NoteModel noteModel)
         {
+            DataContext db = new DataContext();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -76,6 +81,7 @@ namespace FundooWebforms.Controllers
         [ResponseType(typeof(NoteModel))]
         public async Task<IHttpActionResult> PostNoteModel(NoteModel noteModel)
         {
+            DataContext db = new DataContext();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -88,11 +94,12 @@ namespace FundooWebforms.Controllers
         }
 
         // DELETE: api/Note/5
-        [HttpDelete]
-        [Route("api/Delete/{id}")]
+        [HttpPost]
+        [Route("api/Note/delete/{id}")]
         [ResponseType(typeof(NoteModel))]
         public async Task<IHttpActionResult> DeleteNoteModel(int id)
         {
+            DataContext db = new DataContext();
             NoteModel noteModel = await db.noteModels.FindAsync(id);
             if (noteModel == null)
             {
@@ -107,6 +114,7 @@ namespace FundooWebforms.Controllers
 
         protected override void Dispose(bool disposing)
         {
+            DataContext db = new DataContext();
             if (disposing)
             {
                 db.Dispose();
@@ -116,6 +124,7 @@ namespace FundooWebforms.Controllers
 
         private bool NoteModelExists(int id)
         {
+            DataContext db = new DataContext();
             return db.noteModels.Count(e => e.NoteId == id) > 0;
         }
     }

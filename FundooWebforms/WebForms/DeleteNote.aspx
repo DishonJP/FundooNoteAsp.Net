@@ -10,8 +10,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <span>delete note</span>
-        <div id="lblData"></div>
+        <div id="responce"></div>
+        <a href="Home.aspx">Back to home page</a>
     </form>
     <script type="text/javascript">
         let queryString = [];
@@ -28,9 +28,9 @@
             }
             if (queryString["title"] != null && queryString["description"] != null && queryString["id"]!==null) {
             $.ajax({
-                        type: "Delete",
-                        url: "https://localhost:44343/api/note/" + queryString["id"]
-                    }).then(res => console.log(res)).catch(err => console.log(err));
+                        type: "Post",
+                url: "https://localhost:44343/api/note/delete/" + queryString["id"]
+            }).then(res => $("#responce").append("Note Deleted")).catch(err => console.log(err));
             }
         });
     </script>
