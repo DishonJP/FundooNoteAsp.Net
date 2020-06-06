@@ -5,8 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fundoo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" media="screen and (max-width: 1000px)"  href="<%=VirtualPathUtility.ToAbsolute("~/Content/Custom/home.css")%>" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="<%=VirtualPathUtility.ToAbsolute("~/Content/Custom/home.css")%>" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/3bd0a62b3b.js" crossorigin="anonymous"></script>
 </head>
@@ -57,7 +59,7 @@
                         <p>add account</p>
                     </div>
                     <div class="user-out">
-                        <div class="signout">Signout</div>
+                        <div id="signout" class="signout">Signout</div>
                     </div>
                 </div>
             </button>
@@ -65,16 +67,16 @@
 
     </header>
     <div id="drawer" class="drawer">
-        <a href="Home.aspx">Home</a>
-        <a href="Home.aspx">Reminder</a>
-        <a href="Home.aspx">Archive</a>
-        <a href="Home.aspx">Trash</a>
-        <a href="Home.aspx">Labels</a>
+        <a href="Home.aspx"><span>Home</span></a>
+        <a href="Home.aspx"><span>Reminder</span></a>
+        <a href="Home.aspx"><span>Archive</span></a>
+        <a href="Home.aspx"><span>Trash</span></a>
+        <a href="Home.aspx"><span>Labels</span></a>
     </div>
     <section class="create-session">
         <form id="form1" class="add-note" runat="server">
             <div class="title-contain">
-                <asp:TextBox CssClass="input-title" ID="txtTitle" runat="server" Text="Title"></asp:TextBox>
+                <asp:TextBox CssClass="input-title" ID="txtTitle" runat="server" placeholder="Title"></asp:TextBox>
                 <button><i class="fas fa-thumbtack"></i></button>
             </div>
             <br />
@@ -84,7 +86,7 @@
                 Rows="4"
                 Columns="40"
                 runat="server"
-                Text="Description"></asp:TextBox>
+                placeholder="Description"></asp:TextBox>
             <div class="bottom-contain">
                 <div class="icon-button-div">
                     <button><i class="far fa-bell"></i></button>
@@ -105,9 +107,14 @@
             </div>
         </form>
     </section>
-    <section id="noteSession" class="note-session"></section>
+    <section id="noteSession" class="note-session">
+
+    </section>
     <script type="text/javascript">
         $(document).ready(function () {
+            if (localStorage.getItem("userDetails") === null) {
+                window.location.href = "Login";
+            }
             const userName = JSON.parse(localStorage.getItem("userDetails")).FirstName;
             const email = JSON.parse(localStorage.getItem("userDetails")).Email;
             $("#username").append(userName);
@@ -153,6 +160,11 @@
 
             $("#user-open").click(function () {
                 $("#user-class").toggleClass("user-menu-open")
+            })
+
+            $("#signout").click(function () {
+                localStorage.removeItem("userDetails");
+                window.location.href="Login"
             })
 
             $.ajax({
